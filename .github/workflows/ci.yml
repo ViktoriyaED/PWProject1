@@ -27,3 +27,11 @@ jobs:
 
       - name: Run tests
         run: mvn test
+
+      - name: Create test report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Test Execution Report
+          path: target/surefire-reports/TEST-*.xml
+          reporter: java-junit
