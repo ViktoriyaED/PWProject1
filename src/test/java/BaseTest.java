@@ -27,7 +27,7 @@ public class BaseTest {
     protected void createContextAndPage() {
         context = browser.newContext(
                 new Browser.NewContextOptions()
-                        .setBaseURL("https://study.traineracademy.org/home")
+                        .setBaseURL("")
         );
 
         context.tracing().start(
@@ -63,12 +63,6 @@ public class BaseTest {
     }
 
     private void login () {
-        String username = System.getenv("USERNAME");
-        String password = System.getenv("PASSWORD");
 
-        page.navigate("/");
-        page.locator("//span[text()='Email']/../div/input").fill(username);
-        page.locator("//input[@type='password']").fill(password);
-        page.locator("//button[@type='submit']").click();
     }
 }
