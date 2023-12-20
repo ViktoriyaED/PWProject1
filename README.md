@@ -7,7 +7,7 @@ In order to use the framework:
 - Fork the repository.
 - Clone, i.e, download your copy of the repository to your local machine using
 ```
-gh repo clone ViktoriyaED/PurrWebProject1
+gh repo clone IriSamo/PlaywrightJavaLuma
 ```
 - Import the project in IntelliJ IDEA.
 
@@ -74,4 +74,4 @@ To see the report, go to the
 By default, the test will be executed on Ubuntu runner with headless mode.
 
 #
-
+Prepared by [Irina Samo](https://github.com/IriSamo)

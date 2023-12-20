@@ -19,7 +19,7 @@ public class BaseTest {
     protected void launchBrowser() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions()
+                new BrowserType.LaunchOptions()//.setHeadless(false)
         );
     }
 
@@ -27,7 +27,7 @@ public class BaseTest {
     protected void createContextAndPage() {
         context = browser.newContext(
                 new Browser.NewContextOptions()
-                        .setBaseURL("https://magento.softwaretestingboard.com/")
+                        .setBaseURL("https://study.traineracademy.org/home")
         );
 
         context.tracing().start(
@@ -38,6 +38,7 @@ public class BaseTest {
         );
 
         page = context.newPage();
+        login();
     }
 
     @AfterMethod
@@ -59,5 +60,15 @@ public class BaseTest {
     protected void closeBrowser() {
         browser.close();
         playwright.close();
+    }
+
+    private void login () {
+        String username = System.getenv("USERNAME");
+        String password = System.getenv("PASSWORD");
+
+        page.navigate("/");
+        page.locator("//span[text()='Email']/../div/input").fill(username);
+        page.locator("//input[@type='password']").fill(password);
+        page.locator("//button[@type='submit']").click();
     }
 }
