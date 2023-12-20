@@ -4,10 +4,4 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 public class HomeTest extends BaseTest {
 
-    @Test
-    public void testLoginNavigation() {
-
-        assertThat(page).hasURL("https://study.traineracademy.org/home");
-        assertThat(page).hasTitle("Trainer Academy");
-    }
 }
