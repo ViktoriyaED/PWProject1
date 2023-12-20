@@ -27,6 +27,10 @@ jobs:
 
       - name: Run tests
         run: mvn test
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+
 
       - name: Create test report
         uses: dorny/test-reporter@v1
