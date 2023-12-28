@@ -66,8 +66,8 @@ public class BaseTest {
         String username = System.getenv("USERNAME");
         String password = System.getenv("PASSWORD");
 
-        System.out.println(username);
-        System.out.println(password);
+        System.out.println("username = " + username);
+        System.out.println("password = " + password);
 
         page.navigate("/");
         page.locator("//span[text()='Email']/../div/input").fill(username);
