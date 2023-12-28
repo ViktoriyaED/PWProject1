@@ -30,6 +30,7 @@ jobs:
         env:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
+          BASE_URL: ${{ secrets.BASE_URL }}
 
 
       - name: Create test report
