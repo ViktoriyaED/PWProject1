@@ -27,7 +27,7 @@ public class BaseTest {
     protected void createContextAndPage() {
         context = browser.newContext(
                 new Browser.NewContextOptions()
-                        .setBaseURL(System.getenv("BASE_URL"))
+                        .setBaseURL("https://study.traineracademy.org/home")
         );
 
         context.tracing().start(
